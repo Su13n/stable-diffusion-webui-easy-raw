@@ -115,14 +115,13 @@ function onClickConvert() {
     updateInput(target);
 
     //txt2img_enable_hr
-    target = gradioApp().querySelector("#txt2img_enable_hr .flex.items-center");
+    target = gradioApp().querySelector("#txt2img_enable_hr .gr-checkbox");
     //trying something else, maybe it works
     if (params["Hires upscaler"] != "") {
-        var event = new Event('click');
-        target.dispatchEvent(event);
         target.checked = true;
+        setInactive(gradioApp().getElementById('txt2img_hires_fix'), false)
         //console.log(gradioApp().querySelector("#txt2img_hires_fix").hidden);
-        //gradioApp().querySelector("#txt2img_hires_fix").hidden = false;
+        gradioApp().querySelector("#txt2img_hires_fix").hidden = false;
         //console.log(gradioApp().querySelector("#txt2img_hires_fix").hidden);
         updateInput(target);
     };
