@@ -146,14 +146,13 @@ function onClickConvert() {
     target = gradioApp().querySelector("#txt2img_hr_upscaler select");
     //console.log(target.options)
     for(let i = 0; i < target.options.length; i++) {
-        console.log("Option: " + target.options[i].value);
+        //console.log("Option: " + target.options[i].value);
         if(target.options[i].value == params["Hires upscaler"]) {
             for(let j = 0; j < target.options.length; j++) {
                 target.options[j].selected = false;
             }
             target.options[i].selected = true;
             target.value = params["Hires upscaler"]
-            console.log("YES?");
         };
     };
     updateInput(target);
