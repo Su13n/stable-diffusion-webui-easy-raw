@@ -128,19 +128,40 @@ function onClickConvert() {
     };
     
     //txt2img_denoising_strength
-    target = gradioApp().querySelector("#txt2img_denoising_strength .gr-text-input");
-    target.value = params["Denoising strength"]
-    updateInput(target);
+    if(params["Denoising strength"]){
+        target = gradioApp().querySelector("#txt2img_denoising_strength .gr-text-input");
+        target.value = params["Denoising strength"]
+        updateInput(target);
+    }
+    
 
     //txt2img_hr_scale
-    target = gradioApp().querySelector("#txt2img_hr_scale .gr-text-input");
-    target.value = params["Hires upscale"]
-    updateInput(target);
+    if(params["Hires upscale"]){
+        target = gradioApp().querySelector("#txt2img_hr_scale .gr-text-input");
+        target.value = params["Hires upscale"]
+        updateInput(target);
+    }
+    
+    //txt2img_batch_size
+    if(params["Batch size"]){
+        target = gradioApp().querySelector("#txt2img_batch_size .gr-text-input");
+        target.value = params["Batch size"]
+        updateInput(target);
+    }
+
+    //txt2img_batch_count
+    if(params["Batch count"]){
+        target = gradioApp().querySelector("#txt2img_batch_count .gr-text-input");
+        target.value = params["Batch count"]
+        updateInput(target);
+    }
 
     //txt2img_hires_steps
-    target = gradioApp().querySelector("#txt2img_hires_steps .gr-text-input");
-    target.value = params["Hires steps"]
-    updateInput(target);
+    if(params["Hires steps"]) {
+        target = gradioApp().querySelector("#txt2img_hires_steps .gr-text-input");
+        target.value = params["Hires steps"]
+        updateInput(target);
+    }
 
     //txt2img_hr_upscaler
     target = gradioApp().querySelector("#txt2img_hr_upscaler select");
